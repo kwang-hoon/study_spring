@@ -1,0 +1,22 @@
+*restful api
+    -- 기능설계
+        - 글 전체보기
+        - 상세보기(by id)
+        - 글 수정
+        - 글 삭제
+        - 글쓰기
+
+    -- DB(table Model) 설계
+        - post
+
+    -- 화면 설계
+        - binding
+        - jsp
+
+
+
+
+
+
+
+github.com/soong

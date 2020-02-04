@@ -17,19 +17,19 @@ public class KitriBookService {
         return postDao.selectAllPosts();
     }
 
-    public String viewPostById() {
-        return postDao.selectPostByKey();
+    public Post viewPostById(long bookId) {
+        return postDao.selectPostByKey(bookId);
     }
 
-    public void writePost() {
-
+    public Post writePost(Post post) {
+        return postDao.insertPost(post);
     }
 
-    public void moidfyPost() {
-
+    public Post moidfyPost(Post post) {
+        return postDao.updatePost(post);
     }
 
-    public void removePost() {
-
+    public long removePost(long bookId) {
+        return postDao.deletePost(bookId);
     }
 }

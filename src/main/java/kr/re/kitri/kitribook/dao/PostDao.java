@@ -9,18 +9,22 @@ import java.util.List;
 @Repository
 public class PostDao {
 
-    private Object ArrayList;
-
-    public void insertPost() {
-
+    public Post insertPost(Post post) {
+        // insert into post values(......)
+        System.out.println("insert ok....");
+        return post;
     }
 
-    public void updatePost() {
-
+    public Post updatePost(Post post) {
+        // update post....
+        System.out.println("update ok");
+        return post;
     }
 
-    public void deletePost() {
-
+    public long deletePost(long bookId) {
+        // delete from post where bookId = ??
+        System.out.println("delete ok..");
+        return bookId;
     }
 
     public List<Post> selectAllPosts() {
@@ -35,7 +39,10 @@ public class PostDao {
         return books;
     }
 
-    public String selectPostByKey() {
-        return "post by key";
+    public Post selectPostByKey(long bookId) {
+        // select * from book where book_id/bookId
+        Post post = new Post("park", "too many money", "hi", 0);
+
+        return post;
     }
 }

@@ -13,10 +13,12 @@
         - binding
         - jsp
 
+        spring-boot 에선 jsp대신 thymeleaf
 
 
 
 
 
 
-github.com/soong
+
+github.com/soongon/kitribook

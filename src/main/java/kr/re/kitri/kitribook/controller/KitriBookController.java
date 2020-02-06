@@ -2,6 +2,8 @@ package kr.re.kitri.kitribook.controller;
 
 import kr.re.kitri.kitribook.model.Post;
 import kr.re.kitri.kitribook.service.KitriBookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,22 +13,23 @@ import java.util.List;
 @RequestMapping("/kitribook")
 public class KitriBookController {
 
+    public static Logger logger = LoggerFactory.getLogger(KitriBookService.class);
+
     @Autowired
     private KitriBookService kitriBookService;
 
     // [GET] /kitribook/books .. 전체보기
     @GetMapping("/books") // @RequestMapping : 예전방식
-    public List<Post> viewAllPosts(@RequestParam int size, @RequestParam int page) {
-
-        System.out.println("size is " + size + "\npage " + size);
-
+    public List<Post> viewAllPosts() {
+        logger.debug("전체보기 수행함");
+        //System.out.println("size is " + size + "\npage " + size);
         return kitriBookService.viewPosts();
     }
 
-    // [GET] /kitribook/books/{bookId} .. 상세보기
-    @GetMapping("/books/{bookId}")
-    public Post viewPostById(@PathVariable long bookId) {
-        return kitriBookService.viewPostById(bookId);
+    // [GET] /kitribook/books/{postId} .. 상세보기
+    @GetMapping("/books/{postId}")
+    public Post viewPostById(@PathVariable long postId) {
+        return kitriBookService.viewPostById(postId);
     }
 
     // [POST] /kitribook/books .. 글쓰기
@@ -45,8 +48,8 @@ public class KitriBookController {
 
     // [DELETE] /kitribook/books/{bookId} .. 글삭제
     @DeleteMapping("/books/{bookId}")
-    public long deletePost(@PathVariable long bookId) {
-        return kitriBookService.removePost(bookId);
+    public long deletePost(@PathVariable long postId) {
+        return kitriBookService.removePost(postId);
     }
 
 }

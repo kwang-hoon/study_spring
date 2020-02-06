@@ -18,8 +18,8 @@ public class KitriBookService {
         return postDao.selectAllPosts();
     }
 
-    public Post viewPostById(long bookId) {
-        return postDao.selectPostByKey(bookId);
+    public Post viewPostById(long postId) {
+        return postDao.selectPostByKey(postId);
     }
 
     public Post writePost(Post post) {
@@ -30,7 +30,7 @@ public class KitriBookService {
         return postDao.updatePost(post);
     }
 
-    public long removePost(long bookId) {
-        return postDao.deletePost(bookId);
+    public long removePost(long postId) {
+        return postDao.deletePost(postId);
     }
 }
